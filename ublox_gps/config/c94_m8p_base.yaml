@@ -7,7 +7,7 @@ save:
                             # Manager, Antenna, and Logging Configuration
   device: 4                 # Save to EEPROM
 
-device: /dev/ttyACM0
+device: /dev/ublox_rtk
 frame_id: gps_base
 dynamic_model: stationary   # Velocity restricted to 0 m/s. Zero dynamics 
                             # assumed.
@@ -15,8 +15,8 @@ fix_mode: auto
 dr_limit: 0
 enable_ppp: false           # Not supported by C94-M8P
 
-rate: 4                     # Measurement rate in Hz
-nav_rate: 4                 # in number of measurement cycles
+rate: 1                     # Measurement rate in Hz
+nav_rate: 1                 # in number of measurement cycles
 
 uart1:
   baudrate: 19200           # C94-M8P specific

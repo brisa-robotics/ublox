@@ -101,9 +101,9 @@ void UbloxNode::addFirmwareInterface() {
 
 void UbloxNode::addProductInterface(std::string product_category,
                                     std::string ref_rov) {
-  if (product_category.compare("HPG") == 0 && ref_rov.compare("REF") == 0)
+  if (product_category.compare("HPG") == 0 && nh->hasParam("tmode3"))
     components_.push_back(ComponentPtr(new HpgRefProduct));
-  else if (product_category.compare("HPG") == 0 && ref_rov.compare("ROV") == 0)
+  else if (product_category.compare("HPG") == 0)
     components_.push_back(ComponentPtr(new HpgRovProduct));
   else if (product_category.compare("TIM") == 0)
     components_.push_back(ComponentPtr(new TimProduct));
